@@ -20,3 +20,10 @@ The trade-off is straightforward: the check normalizes the string internally and
 ## Edge case
 
 A string can be in *several* forms at once (any ASCII string is in all four) or in *none* of them. `describe` returns a tuple of zero or more form names, in canonical NFC/NFD/NFKC/NFKD order; an empty result means the string is not in any form and does need normalizing.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
