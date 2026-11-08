@@ -1,6 +1,6 @@
 [project]
 name = "unicode-normalization-predicate-kit"
-version = "0.1.0"
+version = "0.1.1"
 description = "Detects the current Unicode normalization form of a string to avoid unnecessary re-normalization"
 requires-python = ">=3.10"
 dependencies = []
